@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentHub | Student Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">S</span><span>StudentHub<small>STUDENT MANAGEMENT</small></span></a>
+    <span class="demo-label">FRONTEND DEMO</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">DASHBOARD / OVERVIEW</p>
+        <h1>Student Management</h1>
+        <p class="muted">Manage student records in one simple place.</p>
+      </div>
+      <button id="addStudentTop" class="button primary">＋ Add Student</button>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card"><span class="stat-icon blue">♙</span><div><p>Total Students</p><h2 id="totalStudents">0</h2></div></article>
+      <article class="stat-card"><span class="stat-icon green">✓</span><div><p>Passed</p><h2 id="passedStudents">0</h2></div></article>
+      <article class="stat-card"><span class="stat-icon orange">◷</span><div><p>Average Marks</p><h2 id="averageMarks">0%</h2></div></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div><h2>Student Records</h2><p class="muted">Add, search, and remove student records.</p></div>
+        <input id="searchInput" class="search" type="search" placeholder="⌕  Search name or course..." aria-label="Search students">
+      </div>
+
+      <form id="studentForm" class="form-grid">
+        <label>Student name<input id="studentName" type="text" placeholder="e.g. Aanya Sharma" required maxlength="60"></label>
+        <label>Email address<input id="studentEmail" type="email" placeholder="e.g. aanya@example.com" required maxlength="100"></label>
+        <label>Course
+          <select id="studentCourse" required>
+            <option value="">Select course</option>
+            <option>BCA</option><option>B.Tech CSE</option><option>BBA</option><option>MCA</option><option>MBA</option><option>Other</option>
+          </select>
+        </label>
+        <label>Marks (out of 100)<input id="studentMarks" type="number" min="0" max="100" placeholder="e.g. 82" required></label>
+        <div class="form-action"><button class="button primary" type="submit">Save Student</button><button class="button secondary" type="reset" id="clearForm">Clear</button></div>
+      </form>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>STUDENT</th><th>COURSE</th><th>MARKS</th><th>RESULT</th><th>ACTION</th></tr></thead>
+          <tbody id="studentTable"></tbody>
+        </table>
+        <div id="emptyState" class="empty-state">No students found. Add a student using the form above.</div>
+      </div>
+      <p class="footnote">Demo note: records are saved in this browser using localStorage. This project does not use a server or database.</p>
+    </section>
+    <footer>StudentHub · Beginner Web Development Project · HTML, CSS & JavaScript</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
